@@ -1,0 +1,107 @@
+/* === RESET & GLOBAL === */
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body, #root { width:100%; height:100%; font-family:'Poppins', sans-serif; background:#f7f7f7; color:#333; scroll-behavior:smooth; }
+.App { display:flex; flex-direction:column; min-height:100vh; }
+.main-content { flex:1; }
+
+/* === HEADER === */
+.nav-container { display:flex; justify-content:space-between; align-items:center; padding:18px 40px; position:sticky; top:0; background:#fff; z-index:1000; box-shadow:0 2px 6px rgba(0,0,0,0.05);}
+.logo a { font-size:28px; font-weight:800; text-decoration:none; color:#333; }
+.link { display:flex; gap:25px; list-style:none; transition:0.3s; }
+.link a { text-decoration:none; font-size:16px; color:#666; padding:10px 14px; border-radius:7px; font-weight:500; transition:0.3s; }
+.link a:hover { background:#ff4081; color:#fff; }
+.hamburger { display:none; flex-direction:column; justify-content:space-between; width:25px; height:20px; cursor:pointer; }
+.hamburger span { display:block; height:3px; width:100%; background:#333; border-radius:2px; transition:all 0.3s ease; }
+.hamburger.active span:nth-child(1){ transform:rotate(45deg) translate(5px,5px);}
+.hamburger.active span:nth-child(2){opacity:0;}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+.link.open { display:flex; flex-direction:column; background:#fff; position:absolute; top:70px; left:0; width:100%; padding:20px 0; border-top:1px solid #eee; text-align:center; animation: slideDown 0.3s ease forwards; }
+@keyframes slideDown { from{opacity:0; transform:translateY(-15px);} to{opacity:1; transform:translateY(0);} }
+
+/* === HOME === */
+.home-container { display:flex; justify-content:space-around; align-items:center; flex-wrap:wrap; gap:40px; padding:100px 40px; opacity:0; transform:translateY(30px); animation:fadeInUp 0.8s forwards;}
+.details { flex:1; min-width:280px; }
+.paragraphe { font-size:42px; font-weight:600; }
+label { color:#ff4081; font-weight:700; }
+.btn { padding:14px 20px; border:none; color:white; background:#ff4081; border-radius:12px; margin-top:20px; display:inline-block; font-weight:600; transition:0.3s; }
+.btn:hover { background:#e73370; transform:scale(1.05); }
+.image img { width:300px; height:350px; object-fit:cover; border-radius:45%; }
+
+/* === ABOUT === */
+.aboutpage { display:flex; justify-content:space-around; align-items:center; flex-wrap:wrap; gap:40px; padding:100px 40px; opacity:0; transform:translateY(30px); animation:fadeInUp 0.8s forwards; }
+.aboutimage img { width:280px; height:340px; object-fit:cover; border-radius:16px; box-shadow:0 6px 15px rgba(0,0,0,0.1);}
+.aboutdescription { max-width:500px; }
+.aboutdescription .titre { font-size:28px; margin-bottom:10px; }
+.aboutdescription .paragraphe { font-size:18px; font-weight:300; line-height:1.6; }
+
+/* === SKILLS === */
+.skillpage { display:flex; justify-content:space-around; align-items:center; flex-wrap:wrap; gap:40px; padding:100px 40px; background:#fff; opacity:0; transform:translateY(30px); animation:fadeInUp 0.8s forwards; }
+.skillsection { max-width:500px; display:flex; flex-direction:column; gap:20px; }
+.card { display:flex; justify-content:space-between; align-items:center; background:#fff; padding:14px 22px; border-radius:12px; border-left:5px solid #ff4081; box-shadow:0 5px 15px rgba(0,0,0,0.05); transition:0.3s; cursor:pointer; }
+
+/* === PORTFOLIO : titre et lien du projet === */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.project-card h4 {
+  font-size: 20px;        /* taille agréable pour le titre */
+  font-weight: 600;
+  color: #d14d8d;         /* rose joli, comme tu voulais */
+  margin-bottom: 4px;
+}
+
+.project-card a {
+  font-size: 14px;
+  color: #00695c;         /* couleur verte pour le lien */
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.project-card a:hover {
+  color: #004d40;         /* vert plus foncé au survol */
+}
+
+.card:hover { transform:scale(1.05); box-shadow:0 8px 20px rgba(0,0,0,0.15);}
+.card .compétence,.card .pourcentage{ font-size:18px; font-weight:700; color:#ff4081;}
+.skillimage img { width:300px; border-radius:12px; object-fit:cover; }
+
+/* === PORTFOLIO === */
+.picturepage { padding:100px 40px; background:#f7f7f7; opacity:0; transform:translateY(30px); animation:fadeInUp 0.8s forwards; }
+.pc { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
+.pc img { width:260px; height:280px; object-fit:cover; border-radius:16px; transition:transform 0.3s ease, box-shadow 0.3s; }
+.pc img:hover { transform:scale(1.05); box-shadow:0 8px 25px rgba(0,0,0,0.2); }
+
+/* === FOOTER === */
+.footer { padding:30px; text-align:center; border-top:1px solid #ddd; background:#fff; margin-top:auto; font-weight:500; color:#666; }
+
+/* === ANIMATIONS === */
+@keyframes fadeInUp { to { opacity:1; transform:translateY(0);} }
+
+/* === RESPONSIVE === */
+@media(max-width:600px){
+  .paragraphe{font-size:26px;}
+  .hamburger{display:flex;}
+  .link{display:none;}
+  .home-container,.aboutpage,.skillpage,.picturepage{flex-direction:column;text-align:center;}
+  .details{text-align:center;}
+  .btn{width:100%; max-width:250px; margin:0 auto;}
+  .image img{width:220px;height:240px;}
+  .aboutimage img{width:220px;height:280px;}
+  .pc img{width:90%;height:auto;}
+}
+@media(min-width:601px) and (max-width:1024px){
+  .paragraphe{font-size:32px;}
+  .hamburger{display:flex;}
+  .link{display:none;}
+  .home-container,.aboutpage,.skillpage,.picturepage{flex-wrap:wrap;}
+  .pc img{width:200px;height:220px;}
+}
+@media(min-width:1025px){
+  .paragraphe{font-size:42px;}
+  .pc img{width:260px;height:280px;}
+}
