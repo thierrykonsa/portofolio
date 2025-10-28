@@ -12,7 +12,7 @@ const Home = () => {
             Je suis <label>Thierry</label><br />
             Développeur <br /> Front-End
           </p>
-          <Button text="Contactez-moi" link="mailto:thierrykonsa111@gmail.com" />
+          <Button text="Contactez-moi" link="https://wa.me/qr/AQGUZJJRSPT7D1" />
         </div>
         <div className="image">
           <img src={photo} alt="Portrait Thierry" />

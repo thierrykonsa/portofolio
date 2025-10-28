@@ -2,6 +2,7 @@ import React from "react";
 
 // Import des images des projets
 import acard from "../assets/coursci.png";
+import phen from "../assets/pheniciapc.png"
 
 
 // Liste des projets avec nom, lien et description
@@ -9,9 +10,15 @@ const projects = [
   {
     name: "COURSA",
     img: acard,
-    link: "http://localhost:5173/",
+    link: "https://coursaci.netlify.app/",
     desc: "librairie de resumé d'oeuvres littéraire."
   },
+  {
+    name: "PHENICIA",
+    img:phen,
+    link:"https://phenicia.ci/",
+    desc:"le sociéte la plus pro de la decoration",
+  }
   
 ];
 
